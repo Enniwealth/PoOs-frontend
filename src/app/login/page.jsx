@@ -16,15 +16,12 @@ const Login = () => {
     const [submitting, setSubmitting] = useState(false);
 
     const handleLogin = async (values) => {
-
         setSubmitting(true);
-
         try {
             const response = await login(values);
             const result = await response.json();
             if (response.ok) {
                 if (typeof window !== "undefined") {
-                    //alert("Hello")
                     localStorage.setItem("_poostoken_",result?.token)
                     localStorage.setItem("_isFirstLogin_",result?.isFirstLogin)
                 }
@@ -34,12 +31,10 @@ const Login = () => {
             }
 
             else {
-
                 setSubmitting(false)
                 if (result?.message) {
                     toast.error(result?.message)
                 }
-
             }
         }
 
