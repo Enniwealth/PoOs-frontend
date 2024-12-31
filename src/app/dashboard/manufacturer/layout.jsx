@@ -38,7 +38,6 @@ const DashboardLayout = ({ children }) => {
                 const response = await getUser();
                 const result = await response.json();
                 if (response.ok) {
-                    console.log(result?.user)
                     setUser(result?.user)
                     setFetching(false)
                 }

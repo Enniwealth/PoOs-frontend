@@ -12,6 +12,7 @@ import { Suspense } from "react";
   const router = useRouter();
   const param = useSearchParams();
 
+  
   if (isConnected) {
     if (param.get("action") === "login") {
       router.replace("login")
@@ -40,7 +41,7 @@ import { Suspense } from "react";
               </Typography>
               {
                 !isConnected &&
-                <ConnectButton showBalance={false} />
+                <ConnectButton showBalance={true} />
               }
             </> 
             
